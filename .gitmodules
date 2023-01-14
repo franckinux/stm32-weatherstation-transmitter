@@ -1,0 +1,6 @@
+[submodule "src/stm32f103/stm32cubef1"]
+	path = src/stm32f103/stm32cubef1
+	url = https://github.com/STMicroelectronics/STM32CubeF1.git
+[submodule "src/cocoos"]
+	path = src/cocoos
+	url = https://github.com/franckinux/cocoOS.git
