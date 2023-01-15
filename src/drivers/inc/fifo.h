@@ -5,7 +5,9 @@
 #include <stdint.h>
 
 #define FIFO_BUFFER_SIZE 256
+#ifndef EOF
 #define EOF '\0'
+#endif
 
 // FIFO struct
 typedef struct

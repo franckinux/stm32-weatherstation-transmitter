@@ -8,6 +8,8 @@ target_sources(${MY_TARGET}
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/application/src/app_main.c
         ${CMAKE_CURRENT_SOURCE_DIR}/application/src/led.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/application/src/sensor.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/bme280.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/fifo.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/fifos.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/log.c

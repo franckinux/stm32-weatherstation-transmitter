@@ -9,16 +9,16 @@
 #define LOG_MODULE_NAME "led"
 #define CYCLE_PERIOD 500  // 500 ms
 
-static uint8_t green_led_state = 1;
 
-
-void led_task(void)
+void led_loop(void)
 {
   task_open();
 
   while(true) {
-    HAL_GPIO_WritePin(led_GPIO_Port , led_Pin, (green_led_state == 0) ? (green_led_state = GPIO_PIN_SET) : (green_led_state = GPIO_PIN_RESET));
+    HAL_GPIO_TogglePin(led_GPIO_Port , led_Pin);
+#if ENABLE_LOGS
     log_debug("test log");
+#endif
     task_wait(CYCLE_PERIOD);
   }
 
