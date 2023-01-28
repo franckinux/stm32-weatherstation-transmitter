@@ -10,7 +10,7 @@
 #define CYCLE_PERIOD 500  // 500 ms
 
 
-void led_loop(void)
+void led_task(void)
 {
   task_open();
 

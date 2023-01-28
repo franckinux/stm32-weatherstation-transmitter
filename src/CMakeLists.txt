@@ -6,12 +6,14 @@ target_include_directories(${MY_TARGET}
 
 target_sources(${MY_TARGET}
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/application/src/app_main.c
         ${CMAKE_CURRENT_SOURCE_DIR}/application/src/led.c
         ${CMAKE_CURRENT_SOURCE_DIR}/application/src/sensor.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/bme280.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/fifo.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/fifos.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/nrf24.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/application/src/init.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/i2c_tools.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/log.c
         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/src/printf.c
 )

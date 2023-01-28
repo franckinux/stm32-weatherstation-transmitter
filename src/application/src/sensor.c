@@ -6,13 +6,14 @@
 #include "main.h"
 #include "bme280.h"
 #include "log.h"
+#include "nrf24.h"
 
 #define LOG_LEVEL LOG_DEBUG
 #define LOG_MODULE_NAME "sensor"
 #define CYCLE_PERIOD 2000  // 2s
 
 
-bool sensor_init(void)
+static void init(void)
 {
     BME280_Reset();
     HAL_Delay(10);
@@ -25,15 +26,22 @@ bool sensor_init(void)
     BME280_SetOSRSP(BME280_OSRS_P_x1);
     BME280_Read_Calibration();
 
-    return true;
+    nRF24_Init();
 }
 
 
-void sensor_loop(void)
+void sensor_task(void)
 {
     task_open();
 
     while(true) {
+        static bool do_init = true;
+
+        if (do_init) {
+          init();
+          do_init = false;
+        }
+
         int32_t ut, up, uh;
         uint32_t t, p, h;
 
